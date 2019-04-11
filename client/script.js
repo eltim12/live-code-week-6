@@ -102,6 +102,7 @@ let app = new Vue({
                 .then(newFavorite => {
                     notif("success", "added new joke to your favourite list!")
                     this.favoriteJokes.push(newFavorite.data)
+                    this.getRandomJoke()
                 })
                 .catch(err => {
                     notif("error", err.response.data.msg)
